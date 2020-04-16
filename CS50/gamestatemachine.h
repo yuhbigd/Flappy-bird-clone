@@ -7,6 +7,8 @@ using namespace std;
 class GameStateMachine
 {
 public:
+
+	int axxx;
 	void update();
 	void render();
 	void pushState(GameState* pState);
