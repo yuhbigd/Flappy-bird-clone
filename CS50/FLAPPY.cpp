@@ -15,7 +15,7 @@ void bird::draw(SDL_Renderer* renderer)
 {
 	gameobject::draw(renderer);
 }
-//gia tao trong luc dung ben tre 1 luc roi roi nhanh dan dan gia toc g=1 v=gt 
+//gia tao trong luc dung ben tre 1 luc roi roi nhanh dan dan gia toc g=0.5 v=gt 
 void bird::updateimage()
 {
 	

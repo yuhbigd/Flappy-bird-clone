@@ -12,7 +12,7 @@ void musiceff::init(string filename)
 
 void musiceff::playmusic()
 {
-	Mix_Volume(-1, volume);
+	Mix_VolumeMusic(volume);
 	Mix_PlayMusic(music, -1);
 }
 

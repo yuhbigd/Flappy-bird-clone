@@ -1,5 +1,4 @@
 #include "FILETEXT.h"
-#include"SDL_ttf.h"
 textt::textt(int fontsize, string text)
 {
 	_fontColor = { 255, 255, 255, 255 };
@@ -54,5 +53,5 @@ void textt::setText(string newText)
 		return;
 	}
 	_fontValue = newText;
-	_textTexture = loadFont(_fontPath.c_str(), _fontSize, _fontValue.c_str(), _fontColor);
+	_textTexture = loadFont(_fontPath, _fontSize, _fontValue, _fontColor);
 }

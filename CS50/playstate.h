@@ -28,7 +28,6 @@ private:
 	bird birdy,birdy2;
 	string menuId;
 	textt* scored = new textt(20, "0");
-	chunkeff jump;
 	chunkeff explosion;
 };
 
