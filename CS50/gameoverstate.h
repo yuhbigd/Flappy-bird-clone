@@ -20,7 +20,7 @@ public:
 private:
 	Background back[7];
 	textt* c = new textt(60, "GAME OVER");
-	textt* score = new textt(40, "0");
+	textt* score = new textt(50, "0");
 	textt* ysc = new textt (60, "YOUR SCORE : ");
 	textt* hsc = new textt(60, "HIGHTEST SCORE : ");
 	textt* hightscore= new textt(50, "0");

@@ -5,7 +5,6 @@ textt::textt(int fontsize, string text)
 	_fontPath = "flappy.ttf";
 	_fontSize = fontsize;
 	_fontValue = text;
-
 	_textTexture = loadFont(_fontPath, _fontSize, _fontValue, _fontColor);
 	SDL_QueryTexture(_textTexture, NULL, NULL, &_textRect.w, &_textRect.h);
 }

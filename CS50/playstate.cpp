@@ -9,6 +9,8 @@ int timer = 0;//t sinh cot
 pipe a, b;
 MenuState menu;
 int score = 0;
+int newSize = 0;
+int oldSize = 0;
 void playState::update()
 {
 	if (birdcolli == true)
@@ -29,6 +31,15 @@ void playState::update()
 				file.open("score.txt", ios::out);
 				file << score;
 				jump.playmusic();
+				if (score >= 10)
+				{
+					oldSize = newSize;
+					newSize = score / 10;
+					if (newSize > oldSize)
+					{
+						scored->setSize(newSize + 1);
+					}
+				}
 				scored->setText(to_string(score));
 			}
 			birdcolli = collideforup(pairpipe[i].second);

@@ -22,6 +22,11 @@ public:
 	SDL_Texture* loadFont(string fontPath, int fontSize, string text, const SDL_Color& color);
 	void draw(int x, int y);
 	void setText(string newText);
+	void setSize(int n)//just for character
+	{
+		_textRect.w *= n;
+		_textTexture = loadFont(_fontPath, _fontSize, _fontValue, _fontColor);
+	}
 	void clean()
 	{
 		SDL_DestroyTexture(_textTexture);
