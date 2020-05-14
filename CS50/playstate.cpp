@@ -28,6 +28,7 @@ void playState::update()
 				fstream file;
 				file.open("score.txt", ios::out);
 				file << score;
+				jump.playmusic();
 				scored->setText(to_string(score));
 			}
 			birdcolli = collideforup(pairpipe[i].second);
@@ -111,7 +112,6 @@ bool playState::onEnter()
 	birdy2.load(400, 300, 36, 24, "birddown", 0);
 	int a1 = 0, b1 = 0;
 	a.load(a1, b1, 70, 400, "pipe", 0);
-	a.setposy();
 	b.load(a1, b1, 70, 600, "pipe", 0);
 	b.setposyforup(a.getpospipey());
 	pairpipe.push_back(make_pair(a, b));
@@ -119,6 +119,7 @@ bool playState::onEnter()
 	file.open("score.txt", ios::out);
 	file << score;
 	explosion.init("explosion.wav");
+	jump.init("jump.wav");
 	return true;
 }
 
