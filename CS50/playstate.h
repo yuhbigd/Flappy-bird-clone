@@ -29,6 +29,7 @@ private:
 	string menuId;
 	textt* scored = new textt(20, "0");
 	chunkeff explosion;
+	chunkeff jump;
 };
 
 #endif // !MENU__
