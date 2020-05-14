@@ -73,7 +73,9 @@ bool gamoverState::onEnter()
 		hscore = yscore;
 	}
 	score->setText(to_string(yscore));
+	score->setSize(yscore / 10 + 1);
 	hightscore->setText(to_string(hscore));
+	hightscore->setSize(hscore / 10 + 1);
 	mBack.init("flappy.mp3");
 	mBack.playmusic();
 	return true;
