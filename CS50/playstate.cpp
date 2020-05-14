@@ -13,8 +13,8 @@ void playState::update()
 {
 	if (birdcolli == true)
 	{
-		back[1].setpos(back[0].getposx() + 1156);
-		back[3].setpos(back[2].getposx() + 1100);
+		back[1].setpos(back[0].getposx() + 1156);//background
+		back[3].setpos(back[2].getposx() + 1100);//ground
 		for (int i = 0; i < 4; i++)
 		{
 			back[i].updateimage();
@@ -24,7 +24,6 @@ void playState::update()
 		{
 			if (birdy.getposx() + 18 == pairpipe[i].first.getposx() + 70)
 			{
-				jump.playmusic();
 				score++;
 				fstream file;
 				file.open("score.txt", ios::out);
@@ -119,7 +118,6 @@ bool playState::onEnter()
 	fstream file;
 	file.open("score.txt", ios::out);
 	file << score;
-	jump.init("jump.wav");
 	explosion.init("explosion.wav");
 	return true;
 }

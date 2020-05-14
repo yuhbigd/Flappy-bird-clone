@@ -7,7 +7,7 @@ class musiceff
 {
 private:
 	Mix_Music* music;
-	int volume = 128;
+	int volume = 100;
 public:
 	musiceff()
 	{

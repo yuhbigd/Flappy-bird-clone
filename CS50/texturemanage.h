@@ -12,7 +12,7 @@ protected:
 	map<string, SDL_Texture*> textureHolder;
 	static imageManage* instance;
 	SDL_Rect sourceRectangle;//dung de xac dinh phan anh tu anh e in len man
-	SDL_Rect posRectangle;//dung de xa dingj vi tri ma anh dc in ra
+	SDL_Rect posRectangle;//dung de xa dinhj vi tri ma anh dc in ra
 public:
 	SDL_Texture* textxure(string id)
 	{
