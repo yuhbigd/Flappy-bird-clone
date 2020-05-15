@@ -11,6 +11,7 @@ textt::textt(int fontsize, string text)
 
 textt::~textt()
 {
+	clean();
 }
 
 SDL_Texture* textt::loadFont(string fontPath, int fontSize, string text, const SDL_Color& color)

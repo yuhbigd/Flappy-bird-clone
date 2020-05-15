@@ -5,12 +5,6 @@
 #include"fstream"
 #include"inputHandle.h"
 using namespace std;
-int timer = 0;//t sinh cot
-pipe a, b;
-MenuState menu;
-int score = 0;
-int newSize = 0;
-int oldSize = 0;
 void playState::update()
 {
 	if (birdcolli == true)
@@ -34,7 +28,7 @@ void playState::update()
 				if (score >= 10)
 				{
 					oldSize = newSize;
-					newSize = score / 10;
+					newSize = int(log10(score));
 					if (newSize > oldSize)
 					{
 						scored->setSize(newSize + 1);
@@ -108,7 +102,6 @@ void playState::render()
 
 bool playState::onEnter()
 {
-	score = 0;
 	//back[0].loadimage("asset/background.png", "background", gameinit::getG()->getRenderer());
 	back[0].load(0, 0, 1157, 600, "background", 0);
 	back[0].setv(1);

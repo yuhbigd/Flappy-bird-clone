@@ -10,11 +10,12 @@ private:
 	int curr_frame;
 	int obj_width;
 	int obj_height;
-	int gapk =300;
+	int gapk ;
 	vec2D pos;
 public:
 	pipe() 
 	{
+		gapk = 170;
 		curr_frame = 0;
 		obj_width = 0;
 		obj_height = 0;

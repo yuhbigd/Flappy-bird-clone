@@ -30,6 +30,13 @@ private:
 	textt* scored = new textt(20, "0");
 	chunkeff explosion;
 	chunkeff jump;
+
+
+	int timer = 0;//t sinh cot
+	pipe a, b;
+	int score = 0;
+	int newSize = 0;//size cua font moi
+	int oldSize = 0;//size hien tai
 };
 
 #endif // !MENU__
