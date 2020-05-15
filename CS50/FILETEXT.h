@@ -17,6 +17,14 @@ private:
 	int _fontSize;
 	SDL_Color _fontColor;
 public:
+	textt()
+	{
+		_textTexture = NULL;
+		_fontPath = "";
+		_fontValue = "";
+		_fontSize = 0;
+		_fontColor = { 255,255,255,255 };
+	}
 	textt(int fontsize, string text);
 	~textt();
 	SDL_Texture* loadFont(string fontPath, int fontSize, string text, const SDL_Color& color);
@@ -30,6 +38,11 @@ public:
 	void clean()
 	{
 		SDL_DestroyTexture(_textTexture);
+	}
+	void setcolorer(SDL_Color color)
+	{
+		this->_fontColor = color;
+		_textTexture = loadFont(_fontPath, _fontSize, _fontValue, _fontColor);
 	}
 };
 #endif // !__TEXT__
