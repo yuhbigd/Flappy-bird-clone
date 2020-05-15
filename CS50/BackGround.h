@@ -10,6 +10,7 @@ public:
 	void load(int x, int y, int width, int height, string ID, int frame);
 	void loadimage(string filename, string id, SDL_Renderer* renderer);
 	void draw(SDL_Renderer* renderer);
+	void drawAll(SDL_Renderer* renderer);
 	void updateimage();
 	void setv(int a)
 	{
