@@ -24,7 +24,6 @@ bool gameinit::init(string title, int xpos, int ypos, int width, int height)
 	imageManage::getImage()->load("asset/birddown.png", "birddown", render);
 	imageManage::getImage()->load("asset/pipe.png", "pipe", render);
 	imageManage::getImage()->load("asset/exit.png", "exit", render);
-	imageManage::getImage()->load("asset/board.png", "board", render);
 	imageManage::getImage()->load("asset/menu.png", "menu", render);
 	imageManage::getImage()->load("asset/zz2.jpg", "splash", render);
 	imageManage::getImage()->load("asset/restart.png", "restart", render);

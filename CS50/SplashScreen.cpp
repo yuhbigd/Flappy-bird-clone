@@ -15,7 +15,7 @@ void splashState::render()
 
 bool splashState::onEnter()
 {
-	sPl.load(0, 0, 720, 480, "splash", 0);
+	sPl.load(0, 0,868,355, "splash", 0);
 	return true;
 }
 
