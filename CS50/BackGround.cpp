@@ -15,6 +15,11 @@ void Background::draw(SDL_Renderer* renderer)
 	gameobject::draw(renderer);
 }
 
+void Background::drawAll(SDL_Renderer* renderer)
+{
+	imageManage::getImage()->drawAllwindow(renderer, ID);
+}
+
 void Background::updateimage()
 {
 	pos = pos + veclocity;

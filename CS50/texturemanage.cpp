@@ -21,7 +21,7 @@ void imageManage::load(string filename, string id, SDL_Renderer* renderer)
 	 cout << "NO TEXTURE" << endl;
 	 return;
 }
-//x:vi tri x tren man y:vitri y tren man, width: do rong cua anh ,height, frame:chuyen khung hinh SDL_getticks/khung 
+//x:vi tri x tren man y:vitri y tren man, width: do rong cua anh ,height
 void imageManage::drawwithframe(string id, int x, int y, int width, int height, SDL_Renderer* renderer, int frame, SDL_RendererFlip flip)
 {
 	sourceRectangle.x = width*frame;

@@ -1,6 +1,7 @@
 #include"CS50.h"
 #include"MENUSTATE.h"
 #include"playstate.h"
+#include"SplashScreen.h"
 #include"inputHandle.h"
 gameinit* gameinit::ginstance = 0;
 
@@ -25,9 +26,10 @@ bool gameinit::init(string title, int xpos, int ypos, int width, int height)
 	imageManage::getImage()->load("asset/exit.png", "exit", render);
 	imageManage::getImage()->load("asset/board.png", "board", render);
 	imageManage::getImage()->load("asset/menu.png", "menu", render);
+	imageManage::getImage()->load("asset/zz2.jpg", "splash", render);
 	imageManage::getImage()->load("asset/restart.png", "restart", render);
 	gamestate = new GameStateMachine();	
-	gamestate->pushState(new MenuState());
+	gamestate->pushState(new splashState());
 
 	running = true;
 	return true;
