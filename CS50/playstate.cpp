@@ -25,15 +25,8 @@ void playState::update()
 				file.open("score.txt", ios::out);
 				file << score;
 				jump.playmusic();
-				if (score >= 10)
-				{
-					oldSize = newSize;
-					newSize = int(log10(score));
-					if (newSize > oldSize)
-					{
-						scored->setSize(newSize + 1);
-					}
-				}
+				int newSize = int(log10(score));
+				scored->setSize(newSize + 1);
 				scored->setText(to_string(score));
 			}
 			birdcolli = collideforup(pairpipe[i].second);
@@ -152,11 +145,11 @@ bool playState::collideforlow(pipe a)
 //x+16 de chim ra giua,ygiu nguyen khonag tu pipx->pipxwidth 
 bool playState::collideforup(pipe a)
 {
-	if ((birdy.getposx() + 18 >= a.getposx()) && (birdy.getposx() + 18 <= (a.getposx() + 70)) && birdy.getposy() <= a.getpospipey() + 600)
+	if ((birdy.getposx() + 18 >= a.getposx()) && (birdy.getposx() + 18 <= (a.getposx() + 70)) && birdy.getposy() <= a.getpospipey() + 400)
 	{
 		return false;
 	}
-	if ((birdy.getposx() + 30 >= a.getposx()) && (birdy.getposx() + 18 <= (a.getposx() + 70)) && birdy.getposy() <= a.getpospipey() + 600)
+	if ((birdy.getposx() + 30 >= a.getposx()) && (birdy.getposx() + 18 <= (a.getposx() + 70)) && birdy.getposy() <= a.getpospipey() + 400)
 	{
 		return false;
 	}

@@ -26,10 +26,13 @@ public:
 		largemusic = false;
 		sC= new textt(30, "SOUND");
 		cC = new textt(30, "CHUNK");
+		soundValue = new textt(20,"0");
+		chunkValue = new textt(20,"0");
 	}
 	void changemusic();
 	void changechunk();
 	void changeMuteicon();
+	void tValue();
 private:
 	chunkeff test;
 	musiceff test2;
@@ -46,6 +49,8 @@ private:
 	Background circle[2];
 	textt* sC;
 	textt* cC;
+	textt* soundValue;
+	textt* chunkValue;
 };
 
 
