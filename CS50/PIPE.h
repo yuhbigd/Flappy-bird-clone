@@ -15,7 +15,7 @@ private:
 public:
 	pipe() 
 	{
-		gapk = 170;
+		gapk = 200;
 		curr_frame = 0;
 		obj_width = 0;
 		obj_height = 0;

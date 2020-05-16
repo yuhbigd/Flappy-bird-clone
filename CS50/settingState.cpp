@@ -8,11 +8,13 @@ void settingState::update()
 			&& input::getInput()->getmouposY() >= 425 && input::getInput()->getmouposY() <= 452)
 		{
 			changemusic();
+			tValue();
 		}
 		if (input::getInput()->getmouposX() >= 162 && input::getInput()->getmouposX() <= 358
 			&& input::getInput()->getmouposY() >= 225 && input::getInput()->getmouposY() <= 252)
 		{
 			changechunk();
+			tValue();
 		}
 		if (input::getInput()->getmouposX() >= 0 && input::getInput()->getmouposX() <= 50
 			&& input::getInput()->getmouposY() >=0&& input::getInput()->getmouposY() <= 50)
@@ -47,7 +49,10 @@ void settingState::render()
 	}
 	cC->draw(80, 170);
 	sC->draw(80, 370);
+	soundValue->draw(400, 420);
+	chunkValue->draw(400, 220);
 }
+
 
 bool settingState::onEnter()
 {
@@ -63,6 +68,7 @@ bool settingState::onEnter()
 	circle[1].loadDetail(0, 0, 128, 128, 0, 432 - 14,32, 32, "circle", 1);
 	circle[1].setpos(double(volumeMusic / 128) * 200+162);
 	back1.loadDetail(0, 0, 128, 128, 0, 0, 50, 50, "back", 1);
+	tValue();
 	return true;
 }
 bool settingState::onExit()
@@ -130,4 +136,24 @@ void settingState::changeMuteicon()
 		sound[1].loadDetail(0, 0, 128, 128, 80, 400, 64, 64, "sound", 1);
 		largemusic = false;
 	}
+}
+
+void settingState::tValue()
+{
+	int a = volumeChunk;
+	int b = volumeMusic;
+	if (volumeChunk == 0)
+	{
+		a = 1;
+	}
+	if (volumeMusic == 0)
+	{
+		b = 1;
+	}
+	int numOc = log10(a);
+	chunkValue->setText(to_string(int(volumeChunk)));
+	chunkValue->setSize(numOc + 1);
+	int numOm = log10(b);
+	soundValue->setText(to_string(int (volumeMusic)));
+	soundValue->setSize(numOm + 1);
 }

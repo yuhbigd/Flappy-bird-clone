@@ -15,6 +15,7 @@ private:
 	string _fontPath;
 	string _fontValue;
 	int _fontSize;
+	int size;
 	SDL_Color _fontColor;
 public:
 	textt()
@@ -23,6 +24,7 @@ public:
 		_fontPath = "";
 		_fontValue = "";
 		_fontSize = 0;
+		int size = 0;
 		_fontColor = { 255,255,255,255 };
 	}
 	textt(int fontsize, string text);
@@ -32,8 +34,17 @@ public:
 	void setText(string newText);
 	void setSize(int n)//just for character
 	{
-		_textRect.w *= n;
-		_textTexture = loadFont(_fontPath, _fontSize, _fontValue, _fontColor);
+		if (size != n)
+		{
+			cout << size << " " << n << endl;
+			_textRect.w = (_textRect.w / size) * n;
+			_textTexture = loadFont(_fontPath, _fontSize, _fontValue, _fontColor);
+			size = n;
+		}
+		else {
+			return;
+		}
+		
 	}
 	void clean()
 	{
