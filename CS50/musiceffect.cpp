@@ -2,6 +2,9 @@
 
 void musiceff::init(string filename)
 {
+	ifstream file;
+	file.open("musicvolume.txt");
+	file >> volume;
 	Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
 	music = Mix_LoadMUS(filename.c_str());
 	if (music == NULL)

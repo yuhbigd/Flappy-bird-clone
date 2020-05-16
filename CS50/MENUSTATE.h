@@ -18,6 +18,7 @@ public:
 private:
 	      musiceff mBack;
 		  Background back[8];
+		  Background setting;
 		  textt *c=new textt(60,"FLAPPY BIRD CLONE"); 	  
 };
 

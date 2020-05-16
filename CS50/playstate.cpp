@@ -116,7 +116,7 @@ bool playState::onEnter()
 	birdy2.load(400, 300, 36, 24, "birddown", 0);
 	int a1 = 0, b1 = 0;
 	a.load(a1, b1, 70, 400, "pipe", 0);
-	b.load(a1, b1, 70, 600, "pipe", 0);
+	b.load(a1, b1, 70, 400, "pipe", 0);
 	b.setposyforup(a.getpospipey());
 	pairpipe.push_back(make_pair(a, b));
 	fstream file;

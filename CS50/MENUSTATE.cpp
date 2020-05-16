@@ -3,6 +3,7 @@
 #include"inputHandle.h"
 #include"COUNTDOWNstate.h"
 #include"playstate.h"
+#include"settingState.h"
 void MenuState::update()
 {
 	back[1].setpos(back[0].getposx() + 1156);
@@ -24,6 +25,11 @@ void MenuState::update()
 		{
 			gameinit::getG()->quitSdl();
 		}
+		if (input::getInput()->getmouposX() >= 750 && input::getInput()->getmouposX() <= 800
+			&& input::getInput()->getmouposY() >= 550 && input::getInput()->getmouposY() <= 600)
+		{
+			gameinit::getG()->getGamestate()->pushState(new settingState());
+		}
 	}
 	if (input::getInput()->getkeybutt(_SPACE_) == true)
 	{
@@ -42,6 +48,7 @@ void MenuState::render()
 	}
 	c->draw(100, 50);
 	back[6].draw(gameinit::getG()->getRenderer());
+	setting.drawDetail(gameinit::getG()->getRenderer());
 }
 bool MenuState::onEnter()
 {
@@ -62,6 +69,7 @@ bool MenuState::onEnter()
 	back[5].setv(0);
 	back[6].load(700, 0, 100, 100, "exit", 0);
 	back[6].setv(0);
+	setting.loadDetail(0, 0, 128, 128, 750, 550, 50, 50, "setting", 1);
 	mBack.init("flappy.mp3");
 	mBack.playmusic();
 	return true;
