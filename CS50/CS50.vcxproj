@@ -169,6 +169,7 @@
     <ClCompile Include="musiceffect.cpp" />
     <ClCompile Include="PIPE.cpp" />
     <ClCompile Include="playstate.cpp" />
+    <ClCompile Include="settingState.cpp" />
     <ClCompile Include="SplashScreen.cpp" />
     <ClCompile Include="texturemanage.cpp" />
     <ClCompile Include="V2D.cpp" />
@@ -189,6 +190,7 @@
     <ClInclude Include="musiceffect.h" />
     <ClInclude Include="PIPE.h" />
     <ClInclude Include="playstate.h" />
+    <ClInclude Include="settingState.h" />
     <ClInclude Include="SplashScreen.h" />
     <ClInclude Include="texturemanage.h" />
     <ClInclude Include="V2D.h" />

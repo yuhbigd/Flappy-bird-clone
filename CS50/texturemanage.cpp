@@ -35,7 +35,7 @@ void imageManage::drawwithframe(string id, int x, int y, int width, int height, 
 	SDL_RenderCopyEx(renderer, textureHolder[id], &sourceRectangle, &posRectangle, 0,0,flip);
 	
 }
-
+//2 ham luon la lay ca anh 
 void imageManage::drawangle(string id, int x, int y, int width, int height, SDL_Renderer* renderer, int frame, double angle, SDL_RendererFlip flip)
 {
 	sourceRectangle.x = width * frame;
@@ -47,4 +47,17 @@ void imageManage::drawangle(string id, int x, int y, int width, int height, SDL_
 	posRectangle.w = width;
 	posRectangle.h = height;
 	SDL_RenderCopyEx(renderer, textureHolder[id], &sourceRectangle, &posRectangle,angle,0, flip);
+}
+
+void imageManage::drawDetail(string id, int x_image, int y_image, int image_width, int image_height, int x, int y, int width, int height, SDL_Renderer* renderer, int frame)
+{
+	sourceRectangle.x = x_image*frame;
+	sourceRectangle.y = y_image;
+	sourceRectangle.w = image_width;
+	sourceRectangle.h = image_height;
+	posRectangle.x = x;
+	posRectangle.y = y;
+	posRectangle.w = width;
+	posRectangle.h = height;
+	SDL_RenderCopy(renderer, textureHolder[id], &sourceRectangle, &posRectangle);
 }
