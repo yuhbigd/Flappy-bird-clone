@@ -15,6 +15,9 @@ protected:
 	//int curr_row;
 	int obj_width;
 	int obj_height;
+	vec2D pos_img;//x y trong anh
+	int img_w;//do rong
+	int img_h;//do cao trong anh
 
 	vec2D pos;
 	vec2D veclocity;
@@ -33,7 +36,7 @@ public:
 		acceleration.sety(0);
 	}
 	virtual void loadimage(string filename, string id, SDL_Renderer* renderer);
-	virtual  void load(int x, int y, int width, int height, string ID, int frame);
+	virtual  void load(int x_image, int y_image, int image_width, int image_height, int x, int y, int width, int height, string ID, int frame);
 	virtual void draw(SDL_Renderer* renderer);
 	virtual void updateimage();
 	virtual int getposx()

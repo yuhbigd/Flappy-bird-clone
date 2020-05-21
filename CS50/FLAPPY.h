@@ -7,11 +7,11 @@ public:
 	bird():gameobject()
 	{
 	}
-	void load(int x, int y, int width, int height, string ID, int frame);
+	void load(int x_image, int y_image, int image_width, int image_height, int x, int y, int width, int height, string ID, int frame);
 	void loadimage(string filename, string id, SDL_Renderer* renderer);
 	void draw(SDL_Renderer* renderer);
-	void updateimage();
 	void drawangle(SDL_Renderer* renderer,double angle);
+	void updateimage();
 	int getposy()
 	{
 		return pos.gety();

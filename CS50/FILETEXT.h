@@ -24,7 +24,7 @@ public:
 		_fontPath = "";
 		_fontValue = "";
 		_fontSize = 0;
-		int size = 0;
+		size = 0;
 		_fontColor = { 255,255,255,255 };
 	}
 	textt(int fontsize, string text);
@@ -36,8 +36,13 @@ public:
 	{
 		if (size != n)
 		{
-			cout << size << " " << n << endl;
-			_textRect.w = (_textRect.w / size) * n;
+			if (size == 0)
+			{
+				_textRect.w = (_textRect.w / 1) * n;
+			}
+			else {
+				_textRect.w = (_textRect.w / size) * n;
+			}
 			_textTexture = loadFont(_fontPath, _fontSize, _fontValue, _fontColor);
 			size = n;
 		}

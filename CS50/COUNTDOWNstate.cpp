@@ -41,12 +41,13 @@ bool countdownState::onEnter()
 	count0->loadFont("flappy.ttf", 60, "1", co);
 	count1->loadFont("flappy.ttf", 60, "2", co);
 	count2->loadFont("flappy.ttf", 60, "3", co);
-	back[0].load(0, 0, 1157, 600, "background", 0);
+	back[0].load(0, 0, 1157, 600, 0, 0, 1157, 600, "background", 1);
 	back[0].setv(1);
-	back[1].load(0, 0, 1157, 600, "background", 0);
+	back[1].load(0, 0, 1157, 600, 0, 0, 1157, 600, "background", 1);
 	back[1].setv(1);
-	back[2].load(0, 600 - 16, 1100, 16, "ground", 0);
-	back[3].load(0, 600 - 16, 1100, 16, "ground", 0);
+	//back[2].loadimage("asset/ground.png", "ground1", gameinit::getG()->getRenderer());
+	back[2].load(0, 0, 1100, 16, 0, 600 - 16, 1100, 16, "ground", 1);
+	back[3].load(0, 0, 1100, 16, 0, 600 - 16, 1100, 16, "ground", 1);
 	back[3].setv(2);
 	back[2].setv(2);
 	return true;

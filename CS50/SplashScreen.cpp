@@ -10,12 +10,12 @@ void splashState::update()
 
 void splashState::render()
 {
-	sPl.drawAll(gameinit::getG()->getRenderer());
+	sPl.draw(gameinit::getG()->getRenderer());
 }
 
 bool splashState::onEnter()
 {
-	sPl.load(0, 0,868,355, "splash", 0);
+	sPl.load(0,0,868,355,0, 0,800,600, "splash", 1);
 	return true;
 }
 
