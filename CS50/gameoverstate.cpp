@@ -45,24 +45,25 @@ void gamoverState::render()
 }
 bool gamoverState::onEnter()
 {
-	back[0].load(0, 0, 1157, 600, "background", 0);
+	back[0].load(0, 0, 1157, 600, 0, 0, 1157, 600, "background", 1);
 	back[0].setv(1);
-	back[1].load(0, 0, 1157, 600, "background", 0);
+	back[1].load(0, 0, 1157, 600, 0, 0, 1157, 600, "background", 1);
 	back[1].setv(1);
-	back[2].load(0, 600 - 16, 1100, 16, "ground", 0);
-	back[3].load(0, 600 - 16, 1100, 16, "ground", 0);
+	back[2].load(0, 0, 1100, 16, 0, 600 - 16, 1100, 16, "ground", 1);
+	back[3].load(0, 0, 1100, 16, 0, 600 - 16, 1100, 16, "ground", 1);
 	back[3].setv(2);
 	back[2].setv(2);
-	back[4].load(700, 0, 100, 100, "exit", 0);
+	back[4].load(0,0,100,100,700, 0, 100, 100, "exit", 1);
 	back[4].setv(0);
-	back[6].load(200, 400, 200, 200, "restart", 0);
+	back[6].load(0,0,200,200,200, 400, 200, 200, "restart", 1);
 	back[6].setv(0);
-	back[5].load(400, 400, 200, 200, "menu", 0);
+	back[5].load(0,0,200,200,400, 400, 200, 200, "menu", 1);
 	back[5].setv(0);
 	ifstream file1, file2;
 	ofstream file3;
 	file1.open("score.txt");
 	file1 >> yscore;
+	int newSize1 = int(log10(yscore));
 	file2.open("hightscore.txt");
 	file2 >> hscore;
 	if (yscore > hscore)
@@ -72,8 +73,11 @@ bool gamoverState::onEnter()
 		hsc->setText("N HIGHTEST SCORE: ");
 		hscore = yscore;
 	}
+	int newSize2 = int(log10(hscore));
 	score->setText(to_string(yscore));
+	score->setSize(newSize1 + 1);
 	hightscore->setText(to_string(hscore));
+	hightscore->setSize(newSize2 + 1);
 	mBack.init("flappy.mp3");
 	mBack.playmusic();
 	return true;

@@ -96,20 +96,20 @@ void playState::render()
 bool playState::onEnter()
 {
 	//back[0].loadimage("asset/background.png", "background", gameinit::getG()->getRenderer());
-	back[0].load(0, 0, 1157, 600, "background", 0);
+	back[0].load(0,0,1157,600,0,0,1157,600,"background",1);
 	back[0].setv(1);
-	back[1].load(0, 0, 1157, 600, "background", 0);
+	back[1].load(0, 0, 1157, 600, 0, 0, 1157, 600, "background", 1);
 	back[1].setv(1);
 	//back[2].loadimage("asset/ground.png", "ground", gameinit::getG()->getRenderer());
-	back[2].load(0, 600 - 16, 1100, 16, "ground", 0);
-	back[3].load(0, 600 - 16, 1100, 16, "ground", 0);
+	back[2].load(0,0,1100,16,0, 600 - 16, 1100, 16, "ground", 1);
+	back[3].load(0, 0, 1100, 16, 0, 600 - 16, 1100, 16, "ground", 1);
 	back[3].setv(2);
 	back[2].setv(2);
-	birdy.load(400, 300, 36, 24, "bird", 0);
-	birdy2.load(400, 300, 36, 24, "birddown", 0);
+	birdy.load(0,0,36,24,400, 300, 36, 24, "bird", 1);
+	birdy2.load(0, 0, 36, 24, 400, 300, 36, 24, "birddown", 1);
 	int a1 = 0, b1 = 0;
-	a.load(a1, b1, 70, 400, "pipe", 0);
-	b.load(a1, b1, 70, 400, "pipe", 0);
+	a.load(0, 0,70,288,a1,b1, 70, 400, "pipe", 0);
+	b.load(0, 0, 70, 288, a1, b1, 70, 600, "pipe", 0);
 	b.setposyforup(a.getpospipey());
 	pairpipe.push_back(make_pair(a, b));
 	fstream file;
@@ -145,11 +145,11 @@ bool playState::collideforlow(pipe a)
 //x+16 de chim ra giua,ygiu nguyen khonag tu pipx->pipxwidth 
 bool playState::collideforup(pipe a)
 {
-	if ((birdy.getposx() + 18 >= a.getposx()) && (birdy.getposx() + 18 <= (a.getposx() + 70)) && birdy.getposy() <= a.getpospipey() + 400)
+	if ((birdy.getposx() + 18 >= a.getposx()) && (birdy.getposx() + 18 <= (a.getposx() + 70)) && birdy.getposy() <= a.getpospipey() + 600)
 	{
 		return false;
 	}
-	if ((birdy.getposx() + 30 >= a.getposx()) && (birdy.getposx() + 18 <= (a.getposx() + 70)) && birdy.getposy() <= a.getpospipey() + 400)
+	if ((birdy.getposx() + 30 >= a.getposx()) && (birdy.getposx() + 18 <= (a.getposx() + 70)) && birdy.getposy() <= a.getpospipey() + 600)
 	{
 		return false;
 	}

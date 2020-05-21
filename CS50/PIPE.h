@@ -2,27 +2,16 @@
 #define _PIPE_
 #include"gameobj.h"
 #include<cstdlib>//rand
-class pipe 
+class pipe:public gameobject
 {
 private:
-	string ID;
-
-	int curr_frame;
-	int obj_width;
-	int obj_height;
 	int gapk ;
-	vec2D pos;
 public:
 	pipe() 
 	{
 		gapk = 200;
-		curr_frame = 0;
-		obj_width = 0;
-		obj_height = 0;
-		pos.setx(0);
-		pos.sety(0);
 	}
-	void load (int x, int y, int width, int height, string ID, int frame);
+	void load(int x_image, int y_image, int image_width, int image_height, int x, int y, int width, int height, string ID, int frame);
 	void loadimage(string filename, string id, SDL_Renderer* renderer);
 	void draw(SDL_Renderer* renderer);
 	void drawimageflip( SDL_Renderer* renderer);

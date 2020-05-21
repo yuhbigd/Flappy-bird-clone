@@ -39,13 +39,13 @@ void settingState::update()
 
 void settingState::render()
 {
-	back.drawAll(gameinit::getG()->getRenderer());
-	back1.drawDetail(gameinit::getG()->getRenderer());
+	back.draw(gameinit::getG()->getRenderer());
+	back1.draw(gameinit::getG()->getRenderer());
 	for (int i = 0; i < 2; i++)
 	{
-		sound[i].drawDetail(gameinit::getG()->getRenderer());
-		bar[i].drawDetail(gameinit::getG()->getRenderer());
-		circle[i].drawDetail(gameinit::getG()->getRenderer());
+		sound[i].draw(gameinit::getG()->getRenderer());
+		bar[i].draw(gameinit::getG()->getRenderer());
+		circle[i].draw(gameinit::getG()->getRenderer());
 	}
 	cC->draw(80, 170);
 	sC->draw(80, 370);
@@ -58,16 +58,16 @@ bool settingState::onEnter()
 {
 	test.init("jump.wav");
 	test2.init("flappy.mp3");
-	back.load(0, 0, 1157, 600, "background", 0);
-	sound[0].loadDetail(0, 0, 128, 128,80, 200,64, 64, "sound", 1);
-	sound[1].loadDetail(0, 0, 128, 128,80, 400,64, 64, "sound", 1);
-	bar[0].loadDetail(0, 0, 64, 64, 162, 232, double(volumeChunk / 128) * 200, 7, "bar", 1);
-	bar[1].loadDetail(0, 0, 64, 64, 162, 432, double(volumeMusic / 128) * 200, 7, "bar", 1);
-	circle[0].loadDetail(0, 0, 128, 128, 0, 232 - 14, 32, 32, "circle", 1);
+	back.load(0, 0, 1157, 600, 0, 0, 1157, 600, "background", 1);
+	sound[0].load(0, 0, 128, 128,80, 200,64, 64, "sound", 1);
+	sound[1].load(0, 0, 128, 128,80, 400,64, 64, "sound", 1);
+	bar[0].load(0, 0, 64, 64, 162, 232, double(volumeChunk / 128) * 200, 7, "bar", 1);
+	bar[1].load(0, 0, 64, 64, 162, 432, double(volumeMusic / 128) * 200, 7, "bar", 1);
+	circle[0].load(0, 0, 128, 128, 0, 232 - 14, 32, 32, "circle", 1);
 	circle[0].setpos(double(volumeChunk / 128) * 200+162);
-	circle[1].loadDetail(0, 0, 128, 128, 0, 432 - 14,32, 32, "circle", 1);
+	circle[1].load(0, 0, 128, 128, 0, 432 - 14,32, 32, "circle", 1);
 	circle[1].setpos(double(volumeMusic / 128) * 200+162);
-	back1.loadDetail(0, 0, 128, 128, 0, 0, 50, 50, "back", 1);
+	back1.load(0, 0, 128, 128, 0, 0, 50, 50, "back", 1);
 	tValue();
 	return true;
 }
@@ -93,7 +93,7 @@ void settingState::changemusic()
 	}
 	circle[1].setpos(input::getInput()->getmouposX()); 
 	volumeMusic = a;
-	bar[1].loadDetail(0, 0, 64, 64, 162, 432, double(a / 128) * 200, 7, "bar", 1);
+	bar[1].load(0, 0, 64, 64, 162, 432, double(a / 128) * 200, 7, "bar", 1);
 	isrun = false;
 }
 
@@ -110,7 +110,7 @@ void settingState::changechunk()
 	}
 	circle[0].setpos(input::getInput()->getmouposX());
 	volumeChunk = a;
-	bar[0].loadDetail(0, 0, 64, 64, 162, 232, double(volumeChunk / 128) * 200, 7, "bar", 1);
+	bar[0].load(0, 0, 64, 64, 162, 232, double(volumeChunk / 128) * 200, 7, "bar", 1);
 	isrunchunk = false;
 }
 
@@ -118,22 +118,22 @@ void settingState::changeMuteicon()
 {
 	if (largechunk == false && volumeChunk == 0)
 	{
-		sound[0].loadDetail(0, 0, 128, 128, 80, 200, 54, 54, "mute", 1);
+		sound[0].load(0, 0, 128, 128, 80, 200, 54, 54, "mute", 1);
 		largechunk = true;
 	}
 	else if (largechunk == true && volumeChunk > 0)
 	{
-		sound[0].loadDetail(0, 0, 128, 128, 80, 200, 64, 64, "sound", 1);
+		sound[0].load(0, 0, 128, 128, 80, 200, 64, 64, "sound", 1);
 		largechunk = false;
 	}
 	if (largemusic == false && volumeMusic == 0)
 	{
-		sound[1].loadDetail(0, 0, 128, 128, 80, 400, 54, 54, "mute", 1);
+		sound[1].load(0, 0, 128, 128, 80, 400, 54, 54, "mute", 1);
 		largemusic = true;
 	}
 	else if (largemusic == true && volumeMusic > 0)
 	{
-		sound[1].loadDetail(0, 0, 128, 128, 80, 400, 64, 64, "sound", 1);
+		sound[1].load(0, 0, 128, 128, 80, 400, 64, 64, "sound", 1);
 		largemusic = false;
 	}
 }

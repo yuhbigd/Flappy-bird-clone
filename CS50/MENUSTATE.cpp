@@ -48,28 +48,28 @@ void MenuState::render()
 	}
 	c->draw(100, 50);
 	back[6].draw(gameinit::getG()->getRenderer());
-	setting.drawDetail(gameinit::getG()->getRenderer());
+	setting.draw(gameinit::getG()->getRenderer());
 }
 bool MenuState::onEnter()
 {
 	
 	//back[0].loadimage("asset/background.png", "background1",gameinit::getG()->getRenderer());
-	back[0].load(0, 0, 1157, 600, "background", 0);
+	back[0].load(0,0,1157,600,0,0,1157,600, "background",1);
 	back[0].setv(1);
-	back[1].load(0, 0, 1157, 600, "background", 0);
+	back[1].load(0, 0, 1157, 600, 0, 0, 1157, 600, "background", 1);
 	back[1].setv(1);
 	//back[2].loadimage("asset/ground.png", "ground1", gameinit::getG()->getRenderer());
-	back[2].load(0, 600 - 16, 1100, 16, "ground", 0);
-	back[3].load(0, 600 - 16, 1100, 16, "ground", 0);
+	back[2].load(0, 0, 1100, 16, 0, 600 - 16, 1100, 16, "ground", 1);
+	back[3].load(0, 0, 1100, 16, 0, 600 - 16, 1100, 16, "ground", 1);
 	back[3].setv(2);
 	back[2].setv(2);
-	back[4].load(350, 250, 100,100, "play", 0);
+	back[4].load(0,0,100,100,350, 250, 100,100, "play", 1);
 	back[4].setv(0);
-	back[5].load(375, 200, 48, 48, "arrow", 0);
+	back[5].load(0,0,48,48,375, 200, 48, 48, "arrow", 1);
 	back[5].setv(0);
-	back[6].load(700, 0, 100, 100, "exit", 0);
+	back[6].load(0,0,100,100,700, 0, 100, 100, "exit", 1);
 	back[6].setv(0);
-	setting.loadDetail(0, 0, 128, 128, 750, 550, 50, 50, "setting", 1);
+	setting.load(0, 0, 128, 128, 750, 550, 50, 50, "setting", 1);
 	mBack.init("flappy.mp3");
 	mBack.playmusic();
 	return true;

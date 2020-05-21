@@ -22,26 +22,13 @@ void imageManage::load(string filename, string id, SDL_Renderer* renderer)
 	 return;
 }
 //x:vi tri x tren man y:vitri y tren man, width: do rong cua anh ,height
-void imageManage::drawwithframe(string id, int x, int y, int width, int height, SDL_Renderer* renderer, int frame, SDL_RendererFlip flip)
-{
-	sourceRectangle.x = width*frame;
-	sourceRectangle.y = 0;
-	sourceRectangle.w = width;
-	sourceRectangle.h = height;
-	posRectangle.x = x;
-	posRectangle.y = y;
-	posRectangle.w = width;
-	posRectangle.h = height;
-	SDL_RenderCopyEx(renderer, textureHolder[id], &sourceRectangle, &posRectangle, 0,0,flip);
-	
-}
 //2 ham luon la lay ca anh 
-void imageManage::drawangle(string id, int x, int y, int width, int height, SDL_Renderer* renderer, int frame, double angle, SDL_RendererFlip flip)
+void imageManage::drawangle(string id, int x_image, int y_image, int image_width, int image_height, int x, int y, int width, int height, SDL_Renderer* renderer, int frame, double angle, SDL_RendererFlip flip)
 {
-	sourceRectangle.x = width * frame;
-	sourceRectangle.y = 0;
-	sourceRectangle.w = width;
-	sourceRectangle.h = height;
+	sourceRectangle.x = x_image * frame;
+	sourceRectangle.y = y_image;
+	sourceRectangle.w = image_width;
+	sourceRectangle.h = image_height;
 	posRectangle.x = x;
 	posRectangle.y = y;
 	posRectangle.w = width;

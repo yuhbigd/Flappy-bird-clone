@@ -36,12 +36,7 @@ public:
 		return instance;
 	}
 	void load(string filename, string id, SDL_Renderer* renderer);
-	void drawwithframe(string id, int x, int y, int width, int height, SDL_Renderer* renderer, int frame=0, SDL_RendererFlip flip = SDL_FLIP_NONE);
-	void drawangle(string id, int x, int y, int width, int height, SDL_Renderer* renderer, int frame ,double angle ,SDL_RendererFlip flip = SDL_FLIP_NONE);
-	void drawAllwindow(SDL_Renderer*renderer,string id)
-	{
-		SDL_RenderCopy(renderer, textureHolder[id], 0, 0);//ham in ca anh va phong vua window
-	}
+	void drawangle(string id, int x_image, int y_image, int image_width, int image_height, int x, int y, int width, int height, SDL_Renderer* renderer, int frame, double angle, SDL_RendererFlip flip= SDL_FLIP_NONE);
 	void drawDetail(string id, int x_image, int y_image, int image_width, int image_height, int x, int y, int width, int height, SDL_Renderer* renderer, int frame);
 };
 #endif // !_TXT_H_
