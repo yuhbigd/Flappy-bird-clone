@@ -33,6 +33,7 @@ void MenuState::update()
 	}
 	if (input::getInput()->getkeybutt(_SPACE_) == true)
 	{
+		mBack.pausechunk();
 		gameinit::getG()->getGamestate()->changeState(new countdownState());
 	}
 }
