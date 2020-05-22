@@ -5,8 +5,8 @@ SDL2-C++
 <img src="CS50/asset/3.png">
 
 This game need
--SDL2 /n
--SDL2_mixer /n
--SDL2_image /n
--SDL2_ttf
+-SDL2 <br>
+-SDL2_mixer <br>
+-SDL2_image <br>
+-SDL2_ttf <br>
 to run
