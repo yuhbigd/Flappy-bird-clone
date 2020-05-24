@@ -1,5 +1,5 @@
 #include "texturemanage.h"
-imageManage* imageManage::instance = 0;
+imageManage* imageManage::instance = NULL;
 void imageManage::load(string filename, string id, SDL_Renderer* renderer)
 {
 	 SDL_Surface *tempSurface= IMG_Load(filename.c_str());

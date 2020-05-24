@@ -1,6 +1,6 @@
 #include "FLAPPY.h"
 #include"inputHandle.h"
-int GRAVITY = 3;
+int GRAVITY = 4;
 void bird::load(int x_image, int y_image, int image_width, int image_height, int x, int y, int width, int height, string ID, int frame)
 {
 	gameobject::load(x_image, y_image, image_width, image_height, x, y, width, height, ID, frame);
@@ -21,10 +21,10 @@ void bird::updateimage()
 	if (input::getInput()->getkeybutt(_SPACE_) == true)
 	{
 		acceleration.sety(0);
-		veclocity.sety(-5);//len nhanh ko gia toc
+		veclocity.sety(-6);//len nhanh ko gia toc
 	}
 	else {
-		acceleration.sety(0.5);
+		acceleration.sety(0.6);
 	}
 	if (acceleration.gety() >= GRAVITY)
 	{

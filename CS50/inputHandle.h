@@ -24,7 +24,6 @@ private:
 	vector<bool> keybutt;
 	int x = 0;
 	int y = 0;
-public:
 	input()
 	{
 		for (int i = 0; i < 3; i++)
@@ -36,6 +35,11 @@ public:
 			keybutt.push_back(false);
 		}
 	}
+	~input()
+	{
+		delete inputinstance;
+	}
+public:
 	int getmouposX()
 	{
 		return x;
