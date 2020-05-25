@@ -1,6 +1,5 @@
 #include"CS50.h"
 #include"MENUSTATE.h"
-#include"playstate.h"
 #include"SplashScreen.h"
 #include"inputHandle.h"
 gameinit* gameinit::ginstance = 0;

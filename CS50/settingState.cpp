@@ -19,7 +19,7 @@ void settingState::update()
 		if (input::getInput()->getmouposX() >= 0 && input::getInput()->getmouposX() <= 50
 			&& input::getInput()->getmouposY() >=0&& input::getInput()->getmouposY() <= 50)
 		{
-			test2.setvolume(volumeMusic);
+			test2.pausechunk();
 			gameinit::getG()->getGamestate()->popState();
 		}
 	}

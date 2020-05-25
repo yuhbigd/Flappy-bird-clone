@@ -11,12 +11,29 @@ public:
 
  bool onEnter();
  bool onExit();
- 
+ countdownState()
+ {
+	 a = 0;
+	 count0 = new textt(60, "1");
+	 count1 = new textt(60, "2");
+	 count2 = new textt(60, "3");
+	 ispause = false;
+ }
+ countdownState(bool check)
+ {
+	 ispause = check;
+	 a = 0;
+	 count0 = new textt(60, "1");
+	 count1 = new textt(60, "2");
+	 count2 = new textt(60, "3");
+ }
 private:
+	int a;//count time
+	bool ispause;
 	Background back[4];
-	textt *count0=new textt(60,"1");	
-	textt *count1=new textt(60,"2");	
-	textt *count2=new textt(60,"3");
+	textt* count0;
+	textt* count1;
+	textt* count2;
 };
 
 #endif // !COUT__

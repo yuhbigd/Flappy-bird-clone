@@ -29,6 +29,7 @@ void MenuState::update()
 			&& input::getInput()->getmouposY() >= 550 && input::getInput()->getmouposY() <= 600)
 		{
 			gameinit::getG()->getGamestate()->pushState(new settingState());
+			afterSetting = true;
 		}
 	}
 	if (input::getInput()->getkeybutt(_SPACE_) == true)
@@ -50,6 +51,11 @@ void MenuState::render()
 	c->draw(100, 50);
 	back[6].draw(gameinit::getG()->getRenderer());
 	setting.draw(gameinit::getG()->getRenderer());
+	if (afterSetting == true)
+	{
+		mBack.playafterSetting();
+		afterSetting = false;
+	}
 }
 bool MenuState::onEnter()
 {
@@ -65,14 +71,12 @@ bool MenuState::onEnter()
 	back[3].setv(2);
 	back[2].setv(2);
 	back[4].load(0,0,100,100,350, 250, 100,100, "play", 1);
-	back[4].setv(0);
 	back[5].load(0,0,48,48,375, 200, 48, 48, "arrow", 1);
-	back[5].setv(0);
 	back[6].load(0,0,100,100,700, 0, 100, 100, "exit", 1);
-	back[6].setv(0);
 	setting.load(0, 0, 128, 128, 750, 550, 50, 50, "setting", 1);
 	mBack.init("flappy.mp3");
 	mBack.playmusic();
+	afterSetting = false;
 	return true;
 }
 

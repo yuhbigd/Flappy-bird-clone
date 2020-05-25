@@ -16,6 +16,7 @@ public:
 	virtual bool onExit();
 
 private:
+	bool afterSetting;
 	      musiceff mBack;
 		  Background back[8];
 		  Background setting;

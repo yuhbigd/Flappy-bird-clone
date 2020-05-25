@@ -14,7 +14,8 @@ enum MOUSEBUTT
 enum KEYBUTTON
 {
 	_ESC_ = 0,
-   _SPACE_ = 1
+   _SPACE_ = 1,
+   _V_=2
 };
 class input
 {
@@ -30,7 +31,7 @@ private:
 		{
 			mousebutt.push_back(false);
 		}
-		for (int i = 0; i < 2; i++)
+		for (int i = 0; i < 3; i++)
 		{
 			keybutt.push_back(false);
 		}
