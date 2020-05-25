@@ -3,10 +3,22 @@
 #include"MENUSTATE.h"
 #include"string"
 #include"fstream"
+#include"PauseState.h"
 #include"inputHandle.h"
 using namespace std;
 void playState::update()
 {
+	if (timer > 75)
+	{
+		a.setposy();
+		if (score > 10)
+		{
+			b.setgapk(130);
+		}
+		b.setposyforup(a.getpospipey());
+		pairpipe.push_back(make_pair(a, b));
+		timer = 0;
+	}
 	if (birdcolli == true)
 	{
 		back[1].setpos(back[0].getposx() + 1156);//background
@@ -56,30 +68,22 @@ void playState::update()
 void playState::render()
 {
 	timer++;
+	if (input::getInput()->getkeybutt(_V_) == true)
+	{
+		gameinit::getG()->getGamestate()->pushState(new pauseState());
+	}
 	for (int i = 0; i < 2; i++)
 	{
 		back[i].draw(gameinit::getG()->getRenderer());
 	}
 	if (input::getInput()->getkeybutt(_SPACE_) == true)
 	{
-    birdy.drawangle(gameinit::getG()->getRenderer(),-15);
+		birdy.drawangle(gameinit::getG()->getRenderer(), -15);
 	}
 	else {
 		birdy2.set(birdy.getposx(), birdy.getposy());
-		birdy2.drawangle(gameinit::getG()->getRenderer(),15);
+		birdy2.drawangle(gameinit::getG()->getRenderer(), 15);
 	}
-	if (timer > 75)
-	{
-		a.setposy();
-		if (score > 10)
-		{
-			b.setgapk(130);
-		}
-		b.setposyforup(a.getpospipey());
-		pairpipe.push_back(make_pair(a, b));
-		timer = 0;
-	}
-
 	for (int i = 0; i < pairpipe.size(); i++)
 	{
 		pairpipe[i].first.draw(gameinit::getG()->getRenderer());

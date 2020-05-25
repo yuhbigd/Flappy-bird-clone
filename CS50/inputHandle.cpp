@@ -60,6 +60,11 @@ void input::update()
 					keybutt[_SPACE_] = true;
 					break;
 				}
+				case SDLK_v:
+				{
+					keybutt[_V_] = true;
+					break;
+				}
 			}
 		}
 		if (e.type == SDL_KEYUP)
@@ -69,6 +74,11 @@ void input::update()
 				case SDLK_SPACE:
 				{
 					keybutt[_SPACE_] = false;
+					break;
+				}
+				case SDLK_v:
+				{
+					keybutt[_V_] = false;
 					break;
 				}
 			}

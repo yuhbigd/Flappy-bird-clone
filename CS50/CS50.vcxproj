@@ -167,6 +167,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MENUSTATE.cpp" />
     <ClCompile Include="musiceffect.cpp" />
+    <ClCompile Include="PauseState.cpp" />
     <ClCompile Include="PIPE.cpp" />
     <ClCompile Include="playstate.cpp" />
     <ClCompile Include="settingState.cpp" />
@@ -188,6 +189,7 @@
     <ClInclude Include="inputHandle.h" />
     <ClInclude Include="MENUSTATE.h" />
     <ClInclude Include="musiceffect.h" />
+    <ClInclude Include="PauseState.h" />
     <ClInclude Include="PIPE.h" />
     <ClInclude Include="playstate.h" />
     <ClInclude Include="settingState.h" />

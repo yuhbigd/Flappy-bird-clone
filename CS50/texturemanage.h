@@ -8,11 +8,21 @@ using namespace std;
 
 class imageManage
 {
-protected:
+private:
 	map<string, SDL_Texture*> textureHolder;
 	static imageManage* instance;
 	SDL_Rect sourceRectangle;//dung de xac dinh phan anh tu anh e in len man
 	SDL_Rect posRectangle;//dung de xa dinhj vi tri ma anh dc in ra
+	~imageManage()
+	{
+		delete instance;
+		for (auto it = textureHolder.begin(); it != textureHolder.end(); it++)//iteration
+		{
+			SDL_DestroyTexture(textureHolder[it->first]);
+			delete it->second;
+			textureHolder.erase(it);
+		}
+	}
 public:
 	SDL_Texture* textxure(string id)
 	{
@@ -22,14 +32,9 @@ public:
 	{
 		textureHolder.erase(ID);
 	}
-	imageManage()
-	{
-
-	}
-
 	static imageManage* getImage()
 	{
-		if (instance == 0)
+		if (instance == NULL)
 		{
 			instance = new imageManage();
 		}

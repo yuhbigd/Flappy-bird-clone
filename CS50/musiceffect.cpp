@@ -1,5 +1,12 @@
 #include "musiceffect.h"
 
+void musiceff::playafterSetting()
+{
+	init(filename);
+	Mix_VolumeMusic(volume);
+	Mix_PlayMusic(music, -1);
+}
+
 void musiceff::init(string filename)
 {
 	ifstream file;
@@ -11,6 +18,7 @@ void musiceff::init(string filename)
 	{
 		cout << Mix_GetError() << endl;
 	}
+	this->filename = filename;
 }
 
 void musiceff::playmusic()

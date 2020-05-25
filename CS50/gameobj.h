@@ -34,6 +34,8 @@ public:
 		veclocity.sety(0);
 		acceleration.setx(0);
 		acceleration.sety(0);
+		img_w = 0;
+		img_h = 0;
 	}
 	virtual void loadimage(string filename, string id, SDL_Renderer* renderer);
 	virtual  void load(int x_image, int y_image, int image_width, int image_height, int x, int y, int width, int height, string ID, int frame);

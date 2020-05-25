@@ -9,15 +9,18 @@ class musiceff
 private:
 	Mix_Music* music;
 	int volume;
+	string filename;
 public:
 	musiceff()
-	{
+	{	
 		music = NULL;
+		filename = "";
 	}
 	int vol()
 	{
 		return volume;
 	}
+	void playafterSetting();
 	void init(string filename);
 	void setvolume(int n)
 	{

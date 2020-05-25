@@ -1,5 +1,4 @@
 #include "COUNTDOWNstate.h"
-int a;
 void countdownState::update()
 {
 	a++;
@@ -9,9 +8,13 @@ void countdownState::update()
 	{
 		back[i].updateimage();
 	}
-	if (a > 150)
+	if (a > 150&&ispause==false)
 	{
 		gameinit::getG()->getGamestate()->changeState(new playState());
+	}
+	if (a > 150&&ispause==true)
+	{
+		gameinit::getG()->getGamestate()->popState();
 	}
 }
 
@@ -37,10 +40,6 @@ void countdownState::render()
 bool countdownState::onEnter()
 {
 	a = 0;
-	SDL_Color co = { 0,0,0,0 };
-	count0->loadFont("flappy.ttf", 60, "1", co);
-	count1->loadFont("flappy.ttf", 60, "2", co);
-	count2->loadFont("flappy.ttf", 60, "3", co);
 	back[0].load(0, 0, 1157, 600, 0, 0, 1157, 600, "background", 1);
 	back[0].setv(1);
 	back[1].load(0, 0, 1157, 600, 0, 0, 1157, 600, "background", 1);
@@ -59,6 +58,8 @@ bool countdownState::onExit()
 		count0->clean();
 		count1->clean();
 		count2->clean();
-
+		delete count0;
+		delete count1;
+		delete count2;
 	return true;
 }

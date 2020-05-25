@@ -18,23 +18,26 @@ private:
 	SDL_Window* window;
 	SDL_Renderer* render;
 	GameStateMachine* gamestate;
-
-
-public:
-	GameStateMachine* getGamestate()
-	{
-		return this->gamestate;
-	}
 	gameinit()
 	{
+		gamestate = NULL;
 		running = true;
 		window = nullptr;
 		render = nullptr;
 	}
 	~gameinit()
 	{
+		SDL_DestroyRenderer(render);
+		SDL_DestroyWindow(window);
 		delete[]render;
-		delete[]window;
+		delete window;
+		delete[]gamestate;
+		delete[]ginstance;
+	}
+public:
+	GameStateMachine* getGamestate()
+	{
+		return this->gamestate;
 	}
 	bool isrun()
 	{

@@ -14,7 +14,8 @@ enum MOUSEBUTT
 enum KEYBUTTON
 {
 	_ESC_ = 0,
-   _SPACE_ = 1
+   _SPACE_ = 1,
+   _V_=2
 };
 class input
 {
@@ -24,18 +25,22 @@ private:
 	vector<bool> keybutt;
 	int x = 0;
 	int y = 0;
-public:
 	input()
 	{
 		for (int i = 0; i < 3; i++)
 		{
 			mousebutt.push_back(false);
 		}
-		for (int i = 0; i < 2; i++)
+		for (int i = 0; i < 3; i++)
 		{
 			keybutt.push_back(false);
 		}
 	}
+	~input()
+	{
+		delete inputinstance;
+	}
+public:
 	int getmouposX()
 	{
 		return x;
