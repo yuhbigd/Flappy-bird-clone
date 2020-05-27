@@ -63,6 +63,12 @@ void playState::update()
 		explosion.playmusic();
 		gameinit::getG()->getGamestate()->changeState(new gamoverState());
 	}
+	if (afterSetting == true)
+	{
+		jump.init(jump.getfilename());
+		explosion.init(explosion.getfilename());
+		afterSetting = false;
+	}
 }
 
 void playState::render()
@@ -71,6 +77,8 @@ void playState::render()
 	if (input::getInput()->getkeybutt(_V_) == true)
 	{
 		gameinit::getG()->getGamestate()->pushState(new pauseState());
+		afterSetting = true;
+	    
 	}
 	for (int i = 0; i < 2; i++)
 	{
@@ -121,12 +129,15 @@ bool playState::onEnter()
 	file << score;
 	explosion.init("explosion.wav");
 	jump.init("jump.wav");
+	afterSetting = false;
 	return true;
 }
 
 bool playState::onExit()
 {
 	scored->clean();
+	delete scored;
+	delete[]back;
 	return true;
 }
 //posy+height of bird

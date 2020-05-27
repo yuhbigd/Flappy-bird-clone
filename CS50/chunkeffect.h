@@ -7,11 +7,13 @@ using namespace std;
 class chunkeff
 {
 private:
-	Mix_Chunk* chunk=NULL;
+	Mix_Chunk* chunk;
 	int volume;
+	string filename;
 public:
 	chunkeff()
 	{
+		volume = 0;
 		chunk = NULL;
 	}
 	void init(string filename);
@@ -27,6 +29,10 @@ public:
 		volume = n;
 		pausechunk();
 		playmusic();
+	}
+	string getfilename()
+	{
+		return filename;
 	}
 	void playmusic();
 	void pausechunk();

@@ -20,16 +20,19 @@ public:
 	{
 		return volume;
 	}
-	void playafterSetting();
 	void init(string filename);
 	void setvolume(int n)
 	{
 		ofstream file;
 		file.open("musicvolume.txt");
 		file << n;
-		volume = n;
+		this->volume = n;
 		pausechunk();
 		playmusic();
+	}
+	string getfilename()
+	{
+		return filename;
 	}
 	void playmusic();
 	void pausechunk();
