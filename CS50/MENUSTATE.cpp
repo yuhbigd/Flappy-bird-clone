@@ -53,7 +53,8 @@ void MenuState::render()
 	setting.draw(gameinit::getG()->getRenderer());
 	if (afterSetting == true)
 	{
-		mBack.playafterSetting();
+		mBack.init(mBack.getfilename());
+		mBack.playmusic();
 		afterSetting = false;
 	}
 }

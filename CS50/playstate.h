@@ -30,7 +30,7 @@ private:
 	textt* scored = new textt(20, "0");
 	chunkeff explosion;
 	chunkeff jump;
-
+	bool afterSetting;
 
 	int timer = 0;//t sinh cot
 	pipe a, b;
