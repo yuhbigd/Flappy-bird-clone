@@ -6,8 +6,8 @@
 #include"settingState.h"
 void MenuState::update()
 {
-	back[1].setpos(back[0].getposx() + 1156);
-	back[3].setpos(back[2].getposx() + 1100);
+	back[1].setpos(back[0].getposx() + 1156);//background phia dang sau dung 2 anh voi vi tri anh 2 =vitri anh 1+1156(do rong cua anh 1)
+	back[3].setpos(back[2].getposx() + 1100);//ground
 	for (int i = 0; i < 7; i++)
 	{
 		back[i].updateimage();
@@ -46,13 +46,14 @@ void MenuState::render()
 	}
 	if (int(SDL_GetTicks() / 1000 % 2) == 1)
 	{
-		back[5].draw(gameinit::getG()->getRenderer());
+		back[5].draw(gameinit::getG()->getRenderer());//mui ten nhap nhay
 	}
 	c->draw(100, 50);
 	back[6].draw(gameinit::getG()->getRenderer());
 	setting.draw(gameinit::getG()->getRenderer());
 	if (afterSetting == true)
 	{
+		//vi da pausechunk o settingstate truoc len can phai play lai
 		mBack.init(mBack.getfilename());
 		mBack.playmusic();
 		afterSetting = false;
@@ -60,13 +61,10 @@ void MenuState::render()
 }
 bool MenuState::onEnter()
 {
-	
-	//back[0].loadimage("asset/background.png", "background1",gameinit::getG()->getRenderer());
 	back[0].load(0,0,1157,600,0,0,1157,600, "background",1);
 	back[0].setv(1);
 	back[1].load(0, 0, 1157, 600, 0, 0, 1157, 600, "background", 1);
 	back[1].setv(1);
-	//back[2].loadimage("asset/ground.png", "ground1", gameinit::getG()->getRenderer());
 	back[2].load(0, 0, 1100, 16, 0, 600 - 16, 1100, 16, "ground", 1);
 	back[3].load(0, 0, 1100, 16, 0, 600 - 16, 1100, 16, "ground", 1);
 	back[3].setv(2);

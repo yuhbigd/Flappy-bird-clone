@@ -17,7 +17,7 @@ void Background::draw(SDL_Renderer* renderer)
 void Background::updateimage()
 {
 	pos = pos + veclocity;
-	if (pos.getx() < -obj_width)
+	if (pos.getx() < -obj_width)//neu di qua -do rong cua anh thi set vt =0
 	{
 		pos.setx(0);
 	}

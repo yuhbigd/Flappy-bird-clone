@@ -14,21 +14,21 @@ void bird::draw(SDL_Renderer* renderer)
 {
 	gameobject::draw(renderer);
 }
-//gia tao trong luc dung ben tre 1 luc roi roi nhanh dan dan gia toc g=0.5 v=gt 
+//gia tao trong luc dung ben tre 1 luc roi roi nhanh dan dan gia toc g=0.5 v=gt ,s+=0+v
 void bird::updateimage()
 {
 	
 	if (input::getInput()->getkeybutt(_SPACE_) == true)
 	{
 		acceleration.sety(0);
-		veclocity.sety(-6);//len nhanh ko gia toc
+		veclocity.sety(-6);//tao ra cach di kieu len xuong tao kho khan cho nguoi choi
 	}
 	else {
 		acceleration.sety(0.6);
 	}
 	if (acceleration.gety() >= GRAVITY)
 	{
-		acceleration.sety(GRAVITY);//>3 thi bang 3 a=3
+		acceleration.sety(GRAVITY);//>4 thi bang 4 a=4 tranh truong hop roi qua nhanh khong the kiem soat
 	}
 	veclocity = veclocity + acceleration;
 	pos = pos + veclocity;
@@ -36,7 +36,7 @@ void bird::updateimage()
 
 void bird::drawangle(SDL_Renderer* renderer,double angle)
 {
-	imageManage::getImage()->drawangle(this->ID, pos_img.getx(), pos_img.gety(), img_w, img_h, pos.getx(), pos.gety(), obj_width, obj_height, renderer, curr_frame, angle);
+	imageManage::getImage()->drawangle(this->ID, pos_img.getx(), pos_img.gety(), img_w, img_h, pos.getx(), pos.gety(), obj_width, obj_height, renderer, curr_frame, angle); //ve con chim nghieng
 }
 
 

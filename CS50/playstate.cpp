@@ -11,12 +11,8 @@ void playState::update()
 	if (timer > 75)
 	{
 		a.setposy();
-		if (score > 10)
-		{
-			b.setgapk(130);
-		}
 		b.setposyforup(a.getpospipey());
-		pairpipe.push_back(make_pair(a, b));
+		pairpipe.push_back(make_pair(a, b));//sinh cot neu timer->75
 		timer = 0;
 	}
 	if (birdcolli == true)
@@ -37,7 +33,7 @@ void playState::update()
 				file.open("score.txt", ios::out);
 				file << score;
 				jump.playmusic();
-				int newSize = int(log10(score));
+				int newSize = int(log10(score));//size moi bang so cac so cua diem de tranh kich thuoc diem bi thu nho lai
 				scored->setSize(newSize + 1);
 				scored->setText(to_string(score));
 			}
@@ -55,7 +51,7 @@ void playState::update()
 			pairpipe[i].second.updateimage();
 			if (pairpipe[i].first.getposx() < -72)
 			{
-				pairpipe.erase(pairpipe.begin() + i);
+				pairpipe.erase(pairpipe.begin() + i);//di ve phia sau man hinh thi xoa cot
 			}
 		}
 	}
@@ -86,11 +82,12 @@ void playState::render()
 	}
 	if (input::getInput()->getkeybutt(_SPACE_) == true)
 	{
+		birdy.load(0, 0, 36, 24, birdy.getposx(), birdy.getposy(), 36, 24, "bird", 1);//load chim huong len huong xuong
 		birdy.drawangle(gameinit::getG()->getRenderer(), -15);
 	}
 	else {
-		birdy2.set(birdy.getposx(), birdy.getposy());
-		birdy2.drawangle(gameinit::getG()->getRenderer(), 15);
+		birdy.load(0, 0, 36, 24, birdy.getposx(), birdy.getposy(), 36, 24, "birddown", 1);
+		birdy.drawangle(gameinit::getG()->getRenderer(), 15);
 	}
 	for (int i = 0; i < pairpipe.size(); i++)
 	{
@@ -118,7 +115,6 @@ bool playState::onEnter()
 	back[3].setv(2);
 	back[2].setv(2);
 	birdy.load(0,0,36,24,400, 300, 36, 24, "bird", 1);
-	birdy2.load(0, 0, 36, 24, 400, 300, 36, 24, "birddown", 1);
 	int a1 = 0, b1 = 0;
 	a.load(0, 0,70,288,a1,b1, 70, 400, "pipe", 0);
 	b.load(0, 0, 70, 288, a1, b1, 70, 600, "pipe", 0);

@@ -11,7 +11,7 @@ public:
 
  bool onEnter();
  bool onExit();
- countdownState()
+ countdownState()//truoc khi vao game
  {
 	 a = 0;
 	 count0 = new textt(60, "1");
@@ -19,7 +19,7 @@ public:
 	 count2 = new textt(60, "3");
 	 ispause = false;
  }
- countdownState(bool check)
+ countdownState(bool check)//de cho viec sau khi pause game
  {
 	 ispause = check;
 	 a = 0;

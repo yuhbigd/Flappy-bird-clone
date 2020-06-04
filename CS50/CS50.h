@@ -44,7 +44,7 @@ public:
 		return running;
 	}
 	SDL_Renderer* getRenderer() const { return render; }
-	static gameinit* getG()
+	static gameinit* getG()//static data members can only be accessed by static methods(chi co the truy cap boi phuong thuc tinh)
 	{
 		if (ginstance == 0)
 		{

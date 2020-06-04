@@ -4,7 +4,7 @@
 #include<vector>
 #include<iostream>
 #include"CS50.h"
-using namespace std;
+using namespace std;//singleton design
 enum MOUSEBUTT
 {
 	LEFT = 0,
@@ -23,10 +23,12 @@ private:
 	static input* inputinstance;
 	vector<bool> mousebutt;
 	vector<bool> keybutt;
-	int x = 0;
-	int y = 0;
+	int x;
+	int y;
 	input()
 	{
+		x = 0;
+		y = 0;
 		for (int i = 0; i < 3; i++)
 		{
 			mousebutt.push_back(false);

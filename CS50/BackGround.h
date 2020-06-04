@@ -13,11 +13,12 @@ public:
 		img_w = 0;
 		img_h = 0;
 	}
+	//x,y_image: vi tri lay anh, image_width,height:do rong can lay tu x va y x,y,w,h inra mh
 	void load(int x_image, int y_image, int image_width, int image_height, int x, int y, int width, int height, string ID, int frame);
 	void loadimage(string filename, string id, SDL_Renderer* renderer);
 	void draw(SDL_Renderer* renderer);
 	void updateimage();
-	void setv(int a)
+	void setv(int a)//van toc
 	{
 		veclocity.setx(-a);
 	}

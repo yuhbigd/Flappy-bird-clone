@@ -3,7 +3,7 @@
 
 #include<string>
 
-class GameState
+class GameState//abstract class de tien cho viec chuyen doi o gamestatemachine
 {
 public:
 	virtual void update() = 0;
