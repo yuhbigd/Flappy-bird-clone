@@ -1,11 +1,11 @@
 #include "FLAPPY.h"
 #include"inputHandle.h"
 int GRAVITY = 4;
-void bird::load(int x_image, int y_image, int image_width, int image_height, int x, int y, int width, int height, string ID, int frame)
+void bird::load(int x_image, int y_image, int image_width, int image_height, int x, int y, int width, int height, string ID, int frame)//ti le do rong cao dai x y cho texture ...
 {
 	gameobject::load(x_image, y_image, image_width, image_height, x, y, width, height, ID, frame);
 }
-void bird::loadimage(string filename, string id, SDL_Renderer* renderer)
+void bird::loadimage(string filename, string id, SDL_Renderer* renderer)//texture cho con chim
 {
 	gameobject::loadimage(filename, id, renderer);
 }
@@ -14,7 +14,7 @@ void bird::draw(SDL_Renderer* renderer)
 {
 	gameobject::draw(renderer);
 }
-//gia tao trong luc dung ben tre 1 luc roi roi nhanh dan dan gia toc g=0.5 v=gt ,s+=0+v
+//gia tao trong luc dung ben tre 1 luc roi roi nhanh dan dan gia toc g=0.5 v=v+g ,s+=0+v
 void bird::updateimage()
 {
 	

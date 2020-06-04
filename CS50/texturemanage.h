@@ -10,7 +10,7 @@ class imageManage
 {
 private:
 	map<string, SDL_Texture*> textureHolder;//map chua texture
-	static imageManage* instance;
+	static imageManage* instance;// static có thời gian tồn tại bằng với thời gian tồn tại của chương trình
 	SDL_Rect sourceRectangle;//dung de xac dinh phan anh tu anh e in len man
 	SDL_Rect posRectangle;//dung de xa dinhj vi tri ma anh dc in ra
 	~imageManage()

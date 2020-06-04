@@ -1,6 +1,6 @@
 #include "texturemanage.h"
 imageManage* imageManage::instance = NULL;
-void imageManage::load(string filename, string id, SDL_Renderer* renderer)
+void imageManage::load(string filename, string id, SDL_Renderer* renderer)//tao texture cho id
 {
 	 SDL_Surface *tempSurface= IMG_Load(filename.c_str());
 	 if (tempSurface == 0)

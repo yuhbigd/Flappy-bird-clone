@@ -25,7 +25,7 @@ private:
 	bool collideforup(pipe a);//va cham cot duoi
 	vector<pair<pipe, pipe>> pairpipe;//cap 2 cot 1 luc
 	bool birdcolli = true;//trang thai song cua chim
-	bird birdy;//2 con 1 con huong xuong 1 con huong len
+	bird birdy;//chim
 	string menuId;
 	textt* scored = new textt(20, "0");
 	chunkeff explosion;

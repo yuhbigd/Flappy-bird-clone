@@ -9,7 +9,7 @@ private:
 public:
 	pipe() 
 	{
-		gapk = 200; //do rong cua giua 2 cot
+		gapk = 180; //do rong cua giua 2 cot
 	}
 	void load(int x_image, int y_image, int image_width, int image_height, int x, int y, int width, int height, string ID, int frame);
 	void loadimage(string filename, string id, SDL_Renderer* renderer);
