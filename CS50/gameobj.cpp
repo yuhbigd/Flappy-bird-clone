@@ -27,5 +27,5 @@ void gameobject::draw(SDL_Renderer* renderer)
 
 void gameobject::updateimage()
 {
-	curr_frame = 0;
+	curr_frame = 1;
 }

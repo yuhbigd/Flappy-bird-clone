@@ -21,11 +21,11 @@ public:
 
 private:
 	Background* back = new Background[4];
-	bool collideforlow(pipe a);
-	bool collideforup(pipe a);
-	vector<pair<pipe, pipe>> pairpipe;
-	bool birdcolli = true;
-	bird birdy,birdy2;
+	bool collideforlow(pipe a);//va cham cot tren
+	bool collideforup(pipe a);//va cham cot duoi
+	vector<pair<pipe, pipe>> pairpipe;//cap 2 cot 1 luc
+	bool birdcolli = true;//trang thai song cua chim
+	bird birdy;//2 con 1 con huong xuong 1 con huong len
 	string menuId;
 	textt* scored = new textt(20, "0");
 	chunkeff explosion;

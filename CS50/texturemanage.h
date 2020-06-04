@@ -5,11 +5,11 @@
 #include<SDL_image.h>
 #include<map>
 using namespace std;
-
+//singleton design pattern
 class imageManage
 {
 private:
-	map<string, SDL_Texture*> textureHolder;
+	map<string, SDL_Texture*> textureHolder;//map chua texture
 	static imageManage* instance;
 	SDL_Rect sourceRectangle;//dung de xac dinh phan anh tu anh e in len man
 	SDL_Rect posRectangle;//dung de xa dinhj vi tri ma anh dc in ra

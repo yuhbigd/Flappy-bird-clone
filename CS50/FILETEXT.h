@@ -32,7 +32,7 @@ public:
 	SDL_Texture* loadFont(string fontPath, int fontSize, string text, const SDL_Color& color);
 	void draw(int x, int y);
 	void setText(string newText);
-	void setSize(int n)//just for character
+	void setSize(int n)//n la so cac tu
 	{
 		if (size != n)
 		{

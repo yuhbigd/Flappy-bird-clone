@@ -9,7 +9,7 @@ private:
 public:
 	pipe() 
 	{
-		gapk = 200;
+		gapk = 200; //do rong cua giua 2 cot
 	}
 	void load(int x_image, int y_image, int image_width, int image_height, int x, int y, int width, int height, string ID, int frame);
 	void loadimage(string filename, string id, SDL_Renderer* renderer);
@@ -26,7 +26,7 @@ public:
 	}
 	void setposy()
 	{
-		pos.sety(200 + rand() % (400));
+		pos.sety(200 + rand() % (400));//set vi tri cao thap cho cot
 	}
 	void setgapk(int n)
 	{
@@ -34,7 +34,7 @@ public:
 	}
 	void setposyforup(double a)
 	{
-		pos.sety(a - gapk-obj_height);
+		pos.sety(a - gapk-obj_height);// cot tren = vi tri cot duoi -gapk-do cao cot duoi
 	}
 };
 #endif // !_PIPE_

@@ -2,7 +2,9 @@
 #include"MENUSTATE.h"
 #include"SplashScreen.h"
 #include"inputHandle.h"
-gameinit* gameinit::ginstance = 0;
+gameinit* gameinit::ginstance = 0;/* Because static member variables are not part of the individual class objects (they are treated similarly to global variables, 
+								  and get initialized when the program starts),
+								  you must explicitly define the static member outside of the class, in the global scope*/
 
 bool gameinit::init(string title, int xpos, int ypos, int width, int height)
 {

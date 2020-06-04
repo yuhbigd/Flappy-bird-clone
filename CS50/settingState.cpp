@@ -148,11 +148,11 @@ void settingState::tValue()
 	}
 	if (volumeMusic == 0)
 	{
-		b = 1;
+		b = 1;//tranh bi loi
 	}
 	int numOc = log10(a);
-	chunkValue->setText(to_string(int(volumeChunk)));
-	chunkValue->setSize(numOc + 1);
+	chunkValue->setText(to_string(int(volumeChunk)));//in so
+	chunkValue->setSize(numOc + 1);//thay size 
 	int numOm = log10(b);
 	soundValue->setText(to_string(int (volumeMusic)));
 	soundValue->setSize(numOm + 1);

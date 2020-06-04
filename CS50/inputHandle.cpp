@@ -1,5 +1,5 @@
 #include"inputHandle.h"
-input* input::inputinstance = 0;
+input* input::inputinstance = 0;//neu de trong h file thi se co the bi loi multiple definition
 void input::update()
 {
 	SDL_Event e;
