@@ -4,13 +4,13 @@ void settingState::update()
 {
 	if (input::getInput()->getmousebutt(LEFT) == true)
 	{
-		if (input::getInput()->getmouposX() >= 162 && input::getInput()->getmouposX() <= 358
+		if (input::getInput()->getmouposX() >= 162 && input::getInput()->getmouposX() <= 362
 			&& input::getInput()->getmouposY() >= 425 && input::getInput()->getmouposY() <= 452)
 		{
 			changemusic();
-			tValue();
+			tValue();//in so ra man hinh
 		}
-		if (input::getInput()->getmouposX() >= 162 && input::getInput()->getmouposX() <= 358
+		if (input::getInput()->getmouposX() >= 162 && input::getInput()->getmouposX() <= 362//x->x+200
 			&& input::getInput()->getmouposY() >= 225 && input::getInput()->getmouposY() <= 252)
 		{
 			changechunk();
@@ -19,13 +19,13 @@ void settingState::update()
 		if (input::getInput()->getmouposX() >= 0 && input::getInput()->getmouposX() <= 50
 			&& input::getInput()->getmouposY() >=0&& input::getInput()->getmouposY() <= 50)
 		{
-			test2.pausechunk();
+			test2.pausechunk();//dung nhac
 			gameinit::getG()->getGamestate()->popState();
 		}
 	}
 	if (isrun == false&& input::getInput()->getmousebutt(LEFT) == false)
 	{
-		test2.setvolume(volumeMusic);
+		test2.setvolume(volumeMusic);//neu tha ra thi set volume cho am nhac = volume
 		isrun = true;
 	}
 	if (isrunchunk == false&& input::getInput()->getmousebutt(LEFT) == false)
@@ -61,10 +61,10 @@ bool settingState::onEnter()
 	back.load(0, 0, 1157, 600, 0, 0, 1157, 600, "background", 1);
 	sound[0].load(0, 0, 128, 128,80, 200,64, 64, "sound", 1);
 	sound[1].load(0, 0, 128, 128,80, 400,64, 64, "sound", 1);
-	bar[0].load(0, 0, 64, 64, 162, 232, double(volumeChunk / 128) * 200, 7, "bar", 1);
+	bar[0].load(0, 0, 64, 64, 162, 232, double(volumeChunk / 128) * 200, 7, "bar", 1);//chieu dai ti le voi am luong
 	bar[1].load(0, 0, 64, 64, 162, 432, double(volumeMusic / 128) * 200, 7, "bar", 1);
 	circle[0].load(0, 0, 128, 128, 0, 232 - 14, 32, 32, "circle", 1);
-	circle[0].setpos(double(volumeChunk / 128) * 200+162);
+	circle[0].setpos(double(volumeChunk / 128) * 200+162);//+162 vi 162 la diem bat dau cua thang am luong va ti le voi am luong de cho qua cau luon o vi tri cuoi thanh
 	circle[1].load(0, 0, 128, 128, 0, 432 - 14,32, 32, "circle", 1);
 	circle[1].setpos(double(volumeMusic / 128) * 200+162);
 	back1.load(0, 0, 128, 128, 0, 0, 50, 50, "back", 1);
@@ -150,7 +150,7 @@ void settingState::tValue()
 	{
 		b = 1;//tranh bi loi
 	}
-	int numOc = log10(a);
+	int numOc = log10(a);//numOc+1->so cac so hang
 	chunkValue->setText(to_string(int(volumeChunk)));//in so
 	chunkValue->setSize(numOc + 1);//thay size 
 	int numOm = log10(b);

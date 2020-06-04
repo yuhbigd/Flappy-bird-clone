@@ -19,9 +19,9 @@ protected:
 	int img_w;//do rong
 	int img_h;//do cao trong anh
 
-	vec2D pos;
-	vec2D veclocity;
-	vec2D acceleration;
+	vec2D pos;//vi tri
+	vec2D veclocity;//van toc
+	vec2D acceleration;//gia toc
 public:
 	gameobject()
 	{

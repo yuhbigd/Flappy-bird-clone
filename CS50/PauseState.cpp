@@ -2,7 +2,7 @@
 
 void pauseState::update()
 {
-	back[1].setpos(back[0].getposx() + 1156);
+	back[1].setpos(back[0].getposx() + 1156);//ve background
 	back[3].setpos(back[2].getposx() + 1100);
 	for (int i = 0; i < 4; i++)
 	{
@@ -45,7 +45,7 @@ void pauseState::update()
 		{
 			gameinit::getG()->getGamestate()->changeState(new countdownState());
 		}
-		return;
+		return;//return vi neu ko return thi onbutt luon = false
 	}
 	else {
 		onButt = false;

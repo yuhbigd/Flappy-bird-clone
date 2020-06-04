@@ -61,7 +61,7 @@ void playState::update()
 	}
 	if (afterSetting == true)
 	{
-		jump.init(jump.getfilename());
+		jump.init(jump.getfilename());//init lai nhac vi da thay doi am luong
 		explosion.init(explosion.getfilename());
 		afterSetting = false;
 	}
@@ -70,11 +70,10 @@ void playState::update()
 void playState::render()
 {
 	timer++;
-	if (input::getInput()->getkeybutt(_V_) == true)
+	if (input::getInput()->getkeybutt(_V_) == true)//v thi pause state
 	{
 		gameinit::getG()->getGamestate()->pushState(new pauseState());
 		afterSetting = true;
-	    
 	}
 	for (int i = 0; i < 2; i++)
 	{

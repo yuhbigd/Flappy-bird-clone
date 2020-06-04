@@ -53,7 +53,7 @@ void MenuState::render()
 	setting.draw(gameinit::getG()->getRenderer());
 	if (afterSetting == true)
 	{
-		//vi da pausechunk o settingstate truoc len can phai play lai
+		//vi da pausechunk o settingstate truoc len can phai play lai init lai nhac vi am luong da thay doi
 		mBack.init(mBack.getfilename());
 		mBack.playmusic();
 		afterSetting = false;
